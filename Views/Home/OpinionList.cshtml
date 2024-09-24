@@ -1,0 +1,45 @@
+﻿@model List<TPLOCAL1.Models.Opinion>
+@using TPLOCAL1.Models
+@{
+    ViewData["Title"] = "OpinionList";
+}
+
+
+
+<head>
+    <title>HN - TP LOCAL</title>
+    <link rel="stylesheet" href="~/resources/header.css" />
+    <link rel="stylesheet" href="~/resources/OpinionList.css" />
+</head>
+
+<body>
+
+    <partial name="~/Views/Shared/Header.cshtml" />
+
+    <h2>
+        List
+    </h2>
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Avis donné</td>
+        </tr>
+
+        @foreach (Opinion opinion in Model)
+        {
+            <tr>
+                <td>@opinion.LastName</td>
+                <td>@opinion.FirstName</td>
+                @if (opinion.OpinionGiven == "O")
+                {
+                    <td style="background-color: green">oui</td>
+                }
+                else{
+                    <td style ="background-color: red">non</td>
+                }
+            </tr>
+        }
+    </table>
+
+</body>

@@ -1,0 +1,22 @@
+﻿@using TPLOCAL1.Models
+
+
+<header>
+    <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+    <h1>Welcome to TP HN</h1>
+</header>
+
+<nav>
+    <ul>
+        @if ((String)ViewData["Title"] == "Index")
+        {
+            <li><a href="/Home/Index/Form">Remplir le formulaire</a></li>
+            <li><a href="/Home/Index/OpinionList">Liste avis</a></li>
+        }
+        else
+        {
+            <li><a href="/Home/Index">accueil</a></li>
+            <li><a href="/Home/Index/OpinionList">Liste avis</a></li>
+        }
+    </ul>
+</nav>
